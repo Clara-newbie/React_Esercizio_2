@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { StrictMode, useState } from "react";
 import Container from "./Container";
 import Hello from "./Hello";
 import { LanguageContext } from "./LanguageContext";
+import GithubUsers from "./GithubUsers";
 
 export default function App() {
   const [language, setLanguage] = useState("en");
@@ -11,7 +12,7 @@ export default function App() {
   }
 
   return (
-    <div>
+    <StrictMode>
       <Container title={<h1>This is my page</h1>}>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio expedita
@@ -27,6 +28,8 @@ export default function App() {
           <option value="it">Italian</option>
         </select>
       </LanguageContext.Provider>
-    </div>
+      <hr />
+      <GithubUsers />
+    </StrictMode>
   );
 }
